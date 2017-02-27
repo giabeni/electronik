@@ -1,0 +1,211 @@
+/* Empty. Add your own CSS if you like */
+.bar.bar-positive .title {
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.home .item{
+  padding: 0;
+  font-size: 12px;
+}
+
+.margin-bottom{
+  margin-bottom: 95px;
+}
+.home .left {
+  width: 20%;
+  float: left;
+  padding: 5px;
+  text-align: center;
+  line-height: 18px;
+  height: 50px;
+}
+
+.home .right{
+  width: 80%;
+  float: right;
+  border-left:1px solid #dddddd;
+  padding: 5px;
+  white-space: normal;
+  height: 50px;
+}
+
+.home .badge{
+  right: 5px;
+  font-size:10px;
+  padding: 2px 5px;
+}
+
+#cat-select{
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #387ef5;
+  color: #fff;
+  border: none;
+  font-size:18px;
+  font-weight: bold;
+  -webkit-appearance: none;
+  -webkit-border-radius:0;
+  -moz-border-radius:0;
+  border-radius: 0;
+  z-index: 5;
+  text-transform: uppercase;
+}
+
+.swiper-slide {
+  z-index: 1;
+}
+
+input[disabled], textarea[disabled] {
+  cursor: default;
+  margin-right: 8%;
+  padding: 5px;
+  color: #0c60ee;
+  opacity:1;
+}
+
+
+.component .item .input-label{
+  font-size: 12px;
+  width: 25%;
+}
+
+.component .button{
+  background: #fff;
+  font-size: 14px;
+  border: none;
+}
+
+.component .button-icon{
+  color: #0c60ee;
+}
+
+.component .button-bar{
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.component .button{
+  font-size: 12px;
+  white-space: normal;
+}
+
+.component .button-block.button-positive{
+  background: #0c60ee;
+  font-size: 14px;
+  border: none;
+  padding: 0px 30px;
+  margin:10px auto;
+  width: auto;
+}
+
+.last-update{
+  width:100%;
+  text-align: center;
+  font-size: 10px;
+  color:#555;
+}
+
+
+.buy .item {
+  padding: 0;
+  white-space: normal;
+  height: 70px;
+  -webkit-transition: all 2.5s ease;
+  -moz-transition: all 2.5s ease;
+  -ms-transition: all 2.5s ease;
+  -o-transition: all 2.5s ease;
+  transition: all 2.5s ease;
+}
+
+.buy .item *{
+  box-sizing: border-box;
+}
+
+.buy .item .button{
+  background: none;
+}
+
+.buy .item .check{
+  width: 10%;
+  text-align: center;
+  float: left;
+  height: 70px;
+  padding: 0;
+  min-width: 0;
+  border-radius: 0;
+  border: 0
+}
+
+.buy .item .qty{
+  width: 15%;
+  box-sizing: border-box;
+  text-align: center;
+  float: left;
+  padding: 2px 0;
+  border-left: 1px solid #ddd;
+  height: 70px;
+}
+
+.buy .item .qty input{
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  height: 60px;
+  font-size: 16px;
+  width:100%;
+}
+
+.buy .item .code{
+  width: 62%;
+  float: left;
+  text-align: left;
+  border-left: 1px solid #ddd;
+  padding: 5px 0;
+  padding-left: 5px;
+  height: 70px;
+}
+
+.buy .item .descr{
+  font-size:10px;
+}
+
+.buy .item .gap{
+  width: 13%;
+  float: left;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  padding: 0 5px;
+  height: 70px;
+  line-height: 70px;
+}
+
+.red{
+  color: #9c2721;
+}
+
+.green {
+  color: #196630;
+}
+
+.hidden{
+  opacity: 0;
+  height: 0 !important;
+}
+
+.buy .item.hidden .check{
+  background: #387ef5 !important;
+  color: #fff !important;
+}
+
+.button-red{
+  background: #ff3b30 !important;
+  color: #ffffff;
+  font-size: 24px;
+}

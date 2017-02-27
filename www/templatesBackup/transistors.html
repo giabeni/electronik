@@ -1,0 +1,67 @@
+<ion-view view-title="Transistors" hide-nav-bar="false" ng-controller="CategoryCtrl" hide-back-button="true ">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-cart" ng-click="goToBuy()">
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-ios-plus-empty" ng-click="goToAdd()">
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios-search" ng-click="goToSearch()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content scroll="false" class="home">
+    <ion-slides slider="slider" show-pager="false" ion-slides-tabs>
+
+      <ion-slide-page ion-slide-tab-label="All">
+        <ion-content scroll="true" class="margin-bottom" >
+          <ul class="list" ng-repeat="(key, t) in types track by $index" style="margin-bottom: 0">
+            <li ng-click="goToComponent('ABCD')" ng-repeat="(key, comp) in t track by comp.code" class="item item-icon-left" >
+              <div class="left">
+                <b>{{comp.code}}</b><br>
+                {{comp.type}}
+              </div>
+              <div class="right">
+                {{comp.description}} <br>
+                {{comp.parameters}}
+              </div>
+              <span class="badge badge-assertive">{{comp.qty - comp.cs}}</span>
+            </li>
+          </ul>
+        </ion-content>
+
+      </ion-slide-page>
+
+      <ion-slide-page ion-slide-tab-label="{{key}}" ng-repeat="(key, data) in types track by $index">
+        <ion-content scroll="true" class="margin-bottom" >
+          <ul class="list">
+            <li ng-click="goToComponent('ABCD')" ng-repeat="(key, comp) in data track by comp.code" class="item item-icon-left" >
+              <div class="left">
+                <b>{{comp.code}}</b><br>
+                {{comp.type}}
+              </div>
+              <div class="right">
+                {{comp.description}} <br>
+                {{comp.parameters}}
+              </div>
+              <span class="badge badge-assertive">{{comp.qty - comp.cs}}</span>
+            </li>
+          </ul>
+        </ion-content>
+
+      </ion-slide-page>
+
+
+    </ion-slides>
+
+    <select id="cat-select" class="icon-right ion-ios-arrow-up"  ng-model="cat" ng-change="goTo(cat)">
+      <option value="Transistor" selected>Transistors</option>
+      <option value="Resistor">Resistors</option>
+      <option value="Analogic">Analogic IC</option>
+      <option value="74xx">74xx</option>
+    </select>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+<ion-view view-title="Add" hide-nav-bar="false" ng-controller="AddCtrl" class="component">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="Save()">
+      Save
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+
+      <label class="item item-input">
+        <span class="input-label">Code:</span>
+        <input type="text" ng-model="data.code" value="">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Category:</span>
+        <input type="text" ng-model="data.category" value="">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Type:</span>
+        <input type="text" ng-model="data.type" value="">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Description:</span>
+        <textarea rows="3" ng-model="data.description" ></textarea>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Parameters:</span>
+        <textarea rows="2" ng-model="data.parameters" ></textarea>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Remark:</span>
+        <textarea rows="2" ng-model="data.remark"></textarea>
+      </label>
+
+      <div class="button-bar item">
+        <div class="button" style="line-height: 20px">Critical Stock :</div>
+        <a class="button button-icon icon ion-ios-minus" ng-click="data.cs = data.cs - 1"></a>
+        <input class="button" type="number" value="0" size="2" ng-model="data.cs">
+        <a class="button button-icon icon ion-ios-plus" ng-click="data.cs = data.cs + 1"></a>
+      </div>
+
+      <div class="button-bar item">
+        <div class="button">Qty :</div>
+        <a class="button button-icon icon ion-ios-minus" ng-click="data.qty = data.qty - 1"></a>
+        <input class="button" type="number" value="0" size="2" ng-model="data.qty">
+        <a class="button button-icon icon ion-ios-plus" ng-click="data.qty = data.qty + 1"></a>
+      </div>
+
+
+      <div class="button-bar item">
+        <div class="button">Gap :</div>
+        <div class="button"></div>
+        <div class="button" ng-bind="gap()" ng-class="{'red': gap() < 0, 'green': gap() >= 0 }" ></div>
+        <div class="button"></div>
+      </div>
+
+      <div class="button-bar item">
+        <div class="button">To Buy:</div>
+        <a class="button button-icon icon ion-ios-minus" ng-click="data.tobuy = data.tobuy - 1"></a>
+        <input class="button" type="number" value="0" size="2" ng-model="data.tobuy">
+        <a class="button button-icon icon ion-ios-plus" ng-click="data.tobuy = data.tobuy + 1"></a>
+      </div>
+
+      <label class="item item-input">
+        <span class="input-label">Datasheet:</span>
+        <input type="text" value="" ng-model="data.datasheet">
+      </label>
+
+      <div class="last-update">Last update: <b>{{data.lastupdate}}</b></div>
+    </div>
+  </ion-content>
+</ion-view>

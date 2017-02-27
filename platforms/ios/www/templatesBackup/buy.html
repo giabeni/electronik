@@ -1,0 +1,33 @@
+<ion-view view-title="Cart" hide-nav-bar="false" ng-controller="BuyCtrl" class="buy">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios-refresh-empty" ng-click="refresh()">
+    </button>
+  </ion-nav-buttons>
+  <ion-content scroll="true">
+    <div class="list">
+
+      <div class="item"  ng-repeat="(code, data) in components track by $index" ng-hide="data.hide" id="{{data.code}}">
+        <button class="button icon ion-ios-checkmark-outline check ok"
+                ng-click="updateComp(data.category,data.type, data.code, data.qty, data.new, data.tobuy, data.cs );"></button>
+        <div class="qty">
+          <input type="number" value="0" size="2" ng-model="data.new">
+        </div>
+
+        <div class="code">
+          <b>{{data.code}}</b>
+          <div class="descr">
+            {{data.description}}
+          </div>
+        </div>
+        <div class="gap">
+          {{needed(data.tobuy,data.cs,data.qty)}}
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>
+<!--
+
+-->

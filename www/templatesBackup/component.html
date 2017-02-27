@@ -1,0 +1,73 @@
+<ion-view view-title="{{code}}" hide-nav-bar="false" ng-controller="ComponentCtrl" class="component">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-compose" ng-click="edit();">
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Category:</span>
+        <input type="text" ng-model="comp.category" ng-disabled="!disabled">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Type:</span>
+        <input type="text" ng-model="comp.type"  ng-disabled="!disabled">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Description:</span>
+        <textarea rows="3" ng-model="comp.description"  ng-disabled="!disabled"></textarea>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Parameters:</span>
+        <textarea rows="2"  ng-model="comp.parameters" ng-disabled="!disabled"></textarea>
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Remark:</span>
+        <textarea rows="2" ng-model="comp.remark" ng-disabled="!disabled"></textarea>
+      </label>
+
+      <div class="button-bar item">
+        <div class="button" style="line-height: 20px">Critical Stock :</div>
+        <a class="button button-icon icon ion-ios-minus" ng-click="csMinus()"></a>
+        <input class="button" type="number" value="0" size="2" ng-model="comp.cs" ng-click="editStock()">
+        <a class="button button-icon icon ion-ios-plus" ng-click="csPlus()"></a>
+      </div>
+
+      <div class="button-bar item">
+        <div class="button">Qty :</div>
+        <a class="button button-icon icon ion-ios-minus" ng-click="qtyMinus()"></a>
+        <input class="button" type="number" value="0" size="2" ng-model="comp.qty" ng-click="editStock()">
+        <a class="button button-icon icon ion-ios-plus" ng-click="qtyPlus()"></a>
+      </div>
+
+
+      <div class="button-bar item">
+        <div class="button">Gap :</div>
+        <div class="button"></div>
+        <div class="button" ng-bind="gap()" ng-class="{'red': gap() < 0, 'green': gap() >= 0 }" ></div>
+        <div class="button"></div>
+      </div>
+
+      <div class="button-bar item">
+        <div class="button">To Buy:</div>
+        <a class="button button-icon icon ion-ios-minus" ng-click="tobuyMinus()"></a>
+        <input class="button" type="number" size="2" ng-model="comp.tobuy" ng-click="editStock()">
+        <a class="button button-icon icon ion-ios-plus" ng-click="tobuyPlus()"></a>
+      </div>
+
+      <label class="item item-input" ng-show="edited">
+        <span class="input-label">Datasheet:</span>
+        <textarea rows="1" ng-model="comp.datasheet" ng-disabled="!disabled"></textarea>
+      </label>
+      <a class="button button-block button-positive link" href="{{comp.datasheet}} ">
+        Datasheet
+      </a>
+
+      <div class="last-update">Last update: <b>{{ comp.lastupdate}}</b></div>
+    </div>
+  </ion-content>
+</ion-view>

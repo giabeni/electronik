@@ -1,0 +1,70 @@
+<ion-view view-title="{{cat}}" hide-nav-bar="false" ng-controller="CategoryCtrl" hide-back-button="true ">
+
+  <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios-cart" ng-click="goToBuy()">
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon icon ion-ios-plus-empty" ng-click="goToAdd()">
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-ios-search" ng-click="goToSearch()">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content scroll="false" class="home">
+    <ion-slides slider="slider" show-pager="false" ion-slides-tabs>
+
+      <ion-slide-page ion-slide-tab-label="All">
+        <ion-content scroll="true" class="margin-bottom" >
+          <ul class="list" style="margin-bottom: 0">
+            <li ng-click="goToComponent(comp.id)"
+                ng-repeat="(key, comp) in all track by $index" class="item item-icon-left" >
+              <div class="left">
+                <b>{{comp.code}}</b><br>
+                {{comp.type}}
+              </div>
+              <div class="right">
+                {{comp.description}} <br>
+                {{comp.parameters}}
+              </div>
+              <span class="badge" ng-class="{'badge-balanced': (comp.qty - comp.cs) >= 0, 'badge-assertive': (comp.qty - comp.cs) < 0}">
+                {{comp.qty}}
+              </span>
+            </li>
+          </ul>
+        </ion-content>
+
+      </ion-slide-page>
+
+      <ion-slide-page ion-slide-tab-label="{{data.type}}" ng-repeat="(key, data) in types track by $index">
+        <ion-content scroll="true" class="margin-bottom" >
+          <ul class="list">
+            <li ng-click="goToComponent(comp.id)"
+                ng-repeat="(key, comp) in data[data.type] track by $index" class="item item-icon-left" >
+              <div class="left">
+                <b>{{comp.code}}</b><br>
+                {{comp.type}}
+              </div>
+              <div class="right">
+                {{comp.description}} <br>
+                {{comp.parameters}}
+              </div>
+              <span class="badge" ng-class="{'badge-balanced': (comp.qty - comp.cs) >= 0, 'badge-assertive': (comp.qty - comp.cs) < 0}">
+                {{comp.qty}}
+              </span>
+            </li>
+          </ul>
+        </ion-content>
+
+      </ion-slide-page>
+
+
+    </ion-slides>
+
+    <select id="cat-select" class="icon-right ion-ios-arrow-up"  ng-model="cat" ng-change="goToCat(cat)">
+      <option ng-value="c.category"  ng-repeat="c in cats track by $index">{{c.category}}</option>
+    </select>
+  </ion-content>
+</ion-view>
