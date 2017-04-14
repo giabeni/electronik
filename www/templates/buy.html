@@ -6,7 +6,7 @@
   <ion-content scroll="true">
     <div class="list">
 
-      <div class="item"  ng-repeat="(code, data) in components track by $index"  id="{{data.code}}">
+      <div class="item"  ng-repeat="(code, data) in components track by $index"  id="{{data.code}}"  ng-click="goToComponent(data.id)">
         <button class="button icon ion-ios-checkmark-outline check ok"
                 ng-click="updateComp(data.id, data.category,data.type, data.code, data.qty, data.new, data.tobuy, data.cs );"></button>
         <div class="qty">

@@ -68,5 +68,5 @@ app.config(function ( $stateProvider, $urlRouterProvider, $httpProvider, Backand
       controller: 'BuyCtrl'
     });
 
-  $urlRouterProvider.otherwise('/category/transistor');
+  $urlRouterProvider.otherwise('/category/');
 });

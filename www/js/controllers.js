@@ -269,7 +269,7 @@ app.controller("AddCtrl", function(DB, $scope, $timeout, $rootScope, $stateParam
   $scope.data.tobuy = 0;
   $scope.data.datasheet = '';
   $scope.data.cart = false;
-  $scope.comp.lastupdate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+  $scope.data.lastupdate = new Date().toISOString().slice(0, 19).replace('T', ' ');
   $scope.gap = function(){
     return $scope.data.qty - $scope.data.cs;
   };
@@ -277,6 +277,7 @@ app.controller("AddCtrl", function(DB, $scope, $timeout, $rootScope, $stateParam
 
 
   $scope.Save = function () {
+  	if($scope.data.type == "") $scope.data.type = 'none';
     $scope.data.category = $scope.data.category.toLowerCase();
     if($scope.gap() < 0 || $scope.data.tobuy > 0){
       $scope.data.cart = true;
@@ -312,7 +313,9 @@ app.controller("BuyCtrl", function( DB, $scope, $timeout, $rootScope, $statePara
     '<br/>Loading...'
   });
 
-
+  $scope.goToComponent = function(id){
+    $state.go('component', { id : id });
+  };
 
   $scope.components = {};
 
